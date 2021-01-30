@@ -55,6 +55,12 @@ class CalCarTax {
 
   static int calType3(int kl) {
     double tax3;
+    if (kl >= 500 && kl <= 1800) {
+      tax3 = 1300;
+    } else if (kl > 1800 && kl <= 6000) {
+      tax3 = 1600;
+    }
+
     _carTax = tax3.toInt(); //Replace real code here
     return _carTax;
   }

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CarType0203 extends StatelessWidget {
+  final int kl;
+  final Function changeKl;
+
+  CarType0203(this.kl, this.changeKl);
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -33,7 +38,7 @@ class CarType0203 extends StatelessWidget {
                       textBaseline: TextBaseline.alphabetic,
                       children: <Widget>[
                         Text(
-                          'Show kl',
+                          '\n${kl.toString()} kl\n',
                           style: TextStyle(
                             color: Colors.blue,
                             fontSize: 20,
@@ -57,11 +62,11 @@ class CarType0203 extends StatelessWidget {
                                 RoundSliderOverlayShape(overlayRadius: 30.0),
                           ),
                           child: Slider(
-                            value: 500.toDouble(),
+                            value: kl.toDouble(),
                             min: 500,
                             max: 6000,
                             onChanged: (newValue) {
-                              //Code Here
+                              changeKl(newValue);
                             },
                           ),
                         ),
@@ -81,7 +86,9 @@ class CarType0203 extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               ),
                               onPressed: () {
-                                //Code Here
+                                (kl >= 600 && kl <= 6000)
+                                    ? changeKl((kl - 100).toDouble())
+                                    : changeKl(kl.toDouble());
                               },
                               constraints: BoxConstraints.tightFor(
                                 width: 50.0,
@@ -100,7 +107,9 @@ class CarType0203 extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               ),
                               onPressed: () {
-                                //Code Here
+                                (kl >= 510 && kl <= 6000)
+                                    ? changeKl((kl - 10).toDouble())
+                                    : changeKl(kl.toDouble());
                               },
                               constraints: BoxConstraints.tightFor(
                                 width: 50.0,
@@ -119,7 +128,9 @@ class CarType0203 extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               ),
                               onPressed: () {
-                                //Code Here
+                                (kl >= 501 && kl <= 6000)
+                                    ? changeKl((kl - 1).toDouble())
+                                    : changeKl(kl.toDouble());
                               },
                               constraints: BoxConstraints.tightFor(
                                 width: 50.0,
@@ -138,7 +149,9 @@ class CarType0203 extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               ),
                               onPressed: () {
-                                //Code Here
+                                (kl < 6000)
+                                    ? changeKl((kl + 1).toDouble())
+                                    : changeKl(kl.toDouble());
                               },
                               constraints: BoxConstraints.tightFor(
                                 width: 50.0,
@@ -157,7 +170,9 @@ class CarType0203 extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               ),
                               onPressed: () {
-                                //Code Here
+                                (kl < 6000)
+                                    ? changeKl((kl + 10).toDouble())
+                                    : changeKl(kl.toDouble());
                               },
                               constraints: BoxConstraints.tightFor(
                                 width: 50.0,
@@ -176,7 +191,9 @@ class CarType0203 extends StatelessWidget {
                                     fontWeight: FontWeight.bold),
                               ),
                               onPressed: () {
-                                //Code Here
+                                (kl < 6000)
+                                    ? changeKl((kl + 100).toDouble())
+                                    : changeKl(kl.toDouble());
                               },
                               constraints: BoxConstraints.tightFor(
                                 width: 50.0,

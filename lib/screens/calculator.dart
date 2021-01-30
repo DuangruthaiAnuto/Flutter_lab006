@@ -38,6 +38,14 @@ class _CalculatorState extends State<Calculator> {
     });
   }
 
+  void changeKl(double newKl) {
+    setState(() {
+      if (newKl > 0) {
+        kl = newKl.toInt();
+      }
+    });
+  }
+
   void calculateButtonClick() {
     setState(() {
       if (typeIndex == 1) {
@@ -58,7 +66,7 @@ class _CalculatorState extends State<Calculator> {
     if (typeIndex == 1) {
       return CarType01(cc, year, changeCC, changeYear); //Replace code here
     } else {
-      return CarType0203(); //Replace code here
+      return CarType0203(kl, changeKl); //Replace code here
     }
   }
 
